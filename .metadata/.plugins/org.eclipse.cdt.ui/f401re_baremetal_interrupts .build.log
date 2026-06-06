@@ -1,7 +1,0 @@
-14:56:02 **** Build of configuration Debug for project f401re_baremetal_interrupts  ****
-make -j7 all 
-make: *** No rule to make target 'all'.  Stop.
-"make -j7 all" terminated with exit code 2. Build might be incomplete.
-
-14:56:03 Build Failed. 1 errors, 0 warnings. (took 81ms)
-
