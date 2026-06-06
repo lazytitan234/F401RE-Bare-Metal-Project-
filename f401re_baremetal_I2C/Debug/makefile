@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := f401re_baremetal_interrupts
+BUILD_ARTIFACT_NAME := f401re_baremetal_I2C
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-f401re_baremetal_interrupts.elf \
+f401re_baremetal_I2C.elf \
 
 MAP_FILES += \
-f401re_baremetal_interrupts\ .map \
+f401re_baremetal_I2C.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-f401re_baremetal_interrupts\ .list \
+f401re_baremetal_I2C.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: f401re_baremetal_interrupts.elf secondary-outputs
+main-build: f401re_baremetal_I2C.elf secondary-outputs
 
 # Tool invocations
-f401re_baremetal_interrupts.elf f401re_baremetal_interrupts\ .map: $(OBJS) $(USER_OBJS) /Users/sunruiyi/STM32CubeIDE/workspace_2.1.1/f401re_baremetal_interrupts\ /STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "f401re_baremetal_interrupts.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/sunruiyi/STM32CubeIDE/workspace_2.1.1/f401re_baremetal_interrupts /STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401re_baremetal_interrupts .map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+f401re_baremetal_I2C.elf f401re_baremetal_I2C.map: $(OBJS) $(USER_OBJS) /Users/sunruiyi/STM32CubeIDE/workspace_2.1.1/f401re_baremetal_I2C/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "f401re_baremetal_I2C.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/sunruiyi/STM32CubeIDE/workspace_2.1.1/f401re_baremetal_I2C/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401re_baremetal_I2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-f401re_baremetal_interrupts\ .list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "f401re_baremetal_interrupts .list"
+f401re_baremetal_I2C.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "f401re_baremetal_I2C.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout f401re_baremetal_interrupts\ .list f401re_baremetal_interrupts\ .map f401re_baremetal_interrupts.elf
+	-$(RM) default.size.stdout f401re_baremetal_I2C.elf f401re_baremetal_I2C.list f401re_baremetal_I2C.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
