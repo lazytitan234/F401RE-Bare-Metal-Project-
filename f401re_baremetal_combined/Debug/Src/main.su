@@ -1,3 +1,0 @@
-../Src/main.c:88:6:SysTick_Handler	4	static
-../Src/main.c:93:6:EXTI15_10_IRQHandler	16	static
-../Src/main.c:118:5:main	4	static

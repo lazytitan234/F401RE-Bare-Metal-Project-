@@ -1,0 +1,10 @@
+15:03:58 **** Incremental Build of configuration Debug for project f401re_baremetal_PWM ****
+make -j7 all 
+arm-none-eabi-size  f401re_baremetal_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1052	      4	   1572	   2628	    a44	f401re_baremetal_PWM.elf
+Finished building: default.size.stdout
+ 
+
+15:03:58 Build Finished. 0 errors, 0 warnings. (took 79ms)
+

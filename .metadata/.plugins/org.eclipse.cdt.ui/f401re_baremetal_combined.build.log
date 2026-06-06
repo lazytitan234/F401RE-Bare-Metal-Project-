@@ -1,0 +1,10 @@
+14:56:02 **** Incremental Build of configuration Debug for project f401re_baremetal_combined ****
+make -j7 all 
+arm-none-eabi-size  f401re_baremetal_combined.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1596	     12	   1572	   3180	    c6c	f401re_baremetal_combined.elf
+Finished building: default.size.stdout
+ 
+
+14:56:02 Build Finished. 0 errors, 0 warnings. (took 80ms)
+
